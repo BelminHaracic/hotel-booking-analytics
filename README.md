@@ -42,7 +42,8 @@ KNIME workflow processes data:
 
 ##  Star Schema Model
 ```
-<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/9b5b3561-b0dd-42ed-8b58-018a9c23e1a9" />
+<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/41444097-903e-44aa-8655-866f4d873da0" />
+
 
 ```
 
