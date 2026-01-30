@@ -41,11 +41,10 @@ KNIME workflow processes data:
 
 
 ##  Star Schema Model
-```
-<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/41444097-903e-44aa-8655-866f4d873da0" />
+
+<img width="1030" height="705" alt="image" src="https://github.com/user-attachments/assets/0b0bc8f4-3ade-4283-879a-d75823db017d" />
 
 
-```
 
 ### Fact Table: fact_bookings
 
