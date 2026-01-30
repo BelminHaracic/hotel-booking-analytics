@@ -30,14 +30,6 @@ Implemented **Star Schema** with:
   - `dim_customer` (448 rows)
   - `dim_room` (231 rows)
 
-###  **KNIME ETL Pipeline**
-
-KNIME workflow processes data:
-- Extracts from source database
-- Transforms (cleans, deduplicates)
-- Loads into dimension tables
-
-<img width="1100" height="534" alt="Hotel_BI_ETL" src="https://github.com/user-attachments/assets/b4999551-5b65-49e8-a41e-8eadc71861b3" />
 
 
 ##  Star Schema Model
@@ -179,8 +171,7 @@ Duplicate Row Filter → DB Writer
 3. France (FRA)      - €11.1M
 4. Spain (ESP)       - €9.8M
 5. Germany (DEU)     - €6.5M
-...
-
+```
 
 ### Monthly Trend
 
