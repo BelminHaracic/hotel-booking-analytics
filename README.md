@@ -12,14 +12,6 @@ This project analyzes **119,390 hotel bookings** from the period 2015-2017. The 
 
 ---
 
-##  Technologies Used
-
-- **Database**: MySQL
-- **ETL Tool**: KNIME Analytics Platform
-- **Visualization**: Power BI Desktop
-- **SQL IDE**: DataGrip
-
----
 
 ##  Project Architecture
 
@@ -48,19 +40,9 @@ KNIME workflow processes data:
 <img width="1100" height="534" alt="Hotel_BI_ETL" src="https://github.com/user-attachments/assets/b4999551-5b65-49e8-a41e-8eadc71861b3" />
 
 
-###  **Power BI Dashboard**
-
-Interactive dashboard with key metrics and visualizations.
-
-<img width="1283" height="724" alt="Hotel_Booking_Dashboard" src="https://github.com/user-attachments/assets/0ac769a4-eed3-49f8-82ee-b12a96e659f9" />
-
-
----
-
 ##  Star Schema Model
 ```
-<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/bea9febc-b2ce-4152-9883-2186e404c521" />
-
+<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/9b5b3561-b0dd-42ed-8b58-018a9c23e1a9" />
 
 ```
 
@@ -155,7 +137,8 @@ Monthly revenue (bars) and number of bookings (line) over the years.
 
 ##  KNIME ETL Workflow
 
-![KNIME Workflow](knime/knime_workflow.png)
+<img width="1100" height="534" alt="Hotel_BI_ETL" src="https://github.com/user-attachments/assets/006c480d-11df-4203-a078-1e7b78ec4fcd" />
+
 
 ### Process
 
@@ -185,22 +168,11 @@ Duplicate Row Filter → DB Writer
 
 **Result**: 231 unique combinations (room types + meal + deposit)
 
----
-
-##  Key Findings and Insights
-
-### Business Metrics
-
-| Metric | Value | Insight |
-|---------|----------|---------|
-| Total Revenue | €42.72M | Solid earnings for 3 years |
-| Avg Daily Rate | €102.44 | Mid-range price segment |
-| Cancellation Rate | **37%** | **PROBLEM** - above average (20-30%) |
-| Peak Month | August | 3-4x more revenue than winter |
 
 ### Top 10 Countries by Revenue
 
-![Query Results](database/top_countries_screenshot.png)
+<img width="812" height="400" alt="image" src="https://github.com/user-attachments/assets/33de3bdd-7d78-4ad6-844c-4960678bc2a3" />
+
 ```
 1. Portugal (PRT)    - €27.7M
 2. UK (GBR)          - €14.4M
@@ -208,22 +180,12 @@ Duplicate Row Filter → DB Writer
 4. Spain (ESP)       - €9.8M
 5. Germany (DEU)     - €6.5M
 ...
-```
 
-### Distribution by Market Segments
-
-![Query Results](database/market_segments_screenshot.png)
-```
-Online TA         - €23.9M (55%)
-Offline TA/TO     - €8.2M  (19%)
-Direct            - €5.1M  (12%)
-Groups            - €4.7M  (11%)
-Corporate         - €0.8M  (2%)
-```
 
 ### Monthly Trend
 
-![Query Results](database/monthly_trend_screenshot.png)
+<img width="1077" height="574" alt="image" src="https://github.com/user-attachments/assets/d7635998-6b30-42e6-8113-a58e1be17e34" />
+
 
 **Seasonality is clear:**
 - Peak: Summer (Jul, Aug) - €3-4M monthly
@@ -231,7 +193,7 @@ Corporate         - €0.8M  (2%)
 
 ---
 
-## 🔍 Data Validation
+##  Data Validation
 
 ### NULL Foreign Keys Check
 ```sql
@@ -244,50 +206,11 @@ SELECT
 FROM fact_bookings;
 ```
 
-![Validation Results](database/validation_screenshot.png)
+<img width="1356" height="136" alt="image" src="https://github.com/user-attachments/assets/b6e4f4e6-788b-4a38-8126-fe29f948c3d3" />
 
-**Result**: All NULL counts are 0 ✅ (clean data!)
 
-### Cancellation Rate Analysis
-```sql
-SELECT 
-    is_canceled,
-    COUNT(*) as count,
-    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM fact_bookings), 2) as percentage
-FROM fact_bookings
-GROUP BY is_canceled;
-```
+**Result**: All NULL counts are 0 (clean data!)
 
-**Result**:
-- Not Canceled (0): 74,733 (63%)
-- Canceled (1): 43,942 (37%)
-
----
-
-##  Business Recommendations
-
-Based on the analysis, I recommend:
-
-1. **Reduce cancellation rate (37%)**
-   - Implement stricter cancellation policies
-   - Require deposit for reservations
-   - Offer early-bird discounts for non-refundable bookings
-
-2. **Reduce dependency on OTA platforms**
-   - Increase direct bookings (lower commission costs)
-   - Invest in marketing and SEO
-   - Loyalty program for direct guests
-
-3. **Address seasonality problem**
-   - Winter promotions and packages
-   - Target business guests during off-season
-   - Event hosting (conferences, seminars)
-
-4. **Increase corporate and group bookings**
-   - Currently only 2% of revenue from corporate clients
-   - Potential for growth in B2B segment
-
----
 
 ##  Repository Contents
 ```
@@ -310,11 +233,10 @@ hotel-booking-dwh/
 ---
 
 
-
 ##  Technical Details
 
 ### Database
-- **DBMS**: MySQL 8.0
+- **DBMS**: MySQL
 - **Schemas**: 3 (hotel_source, hotel_staging, hotel_dwh)
 - **Tables**: 5 in DWH (4 dim + 1 fact)
 - **Rows**: ~120K in fact table
