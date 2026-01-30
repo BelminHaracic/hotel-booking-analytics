@@ -14,7 +14,7 @@ This project analyzes **119,390 hotel bookings** from the period 2015-2017. The 
 
 ##  Technologies Used
 
-- **Database**: MySQL 8.0
+- **Database**: MySQL
 - **ETL Tool**: KNIME Analytics Platform
 - **Visualization**: Power BI Desktop
 - **SQL IDE**: DataGrip
@@ -45,19 +45,22 @@ KNIME workflow processes data:
 - Transforms (cleans, deduplicates)
 - Loads into dimension tables
 
-![KNIME Workflow](knime/knime_workflow.png)
+<img width="1100" height="534" alt="Hotel_BI_ETL" src="https://github.com/user-attachments/assets/b4999551-5b65-49e8-a41e-8eadc71861b3" />
+
 
 ###  **Power BI Dashboard**
 
 Interactive dashboard with key metrics and visualizations.
 
-![Power BI Dashboard](powerbi/dashboard_screenshot.png)
+<img width="1283" height="724" alt="Hotel_Booking_Dashboard" src="https://github.com/user-attachments/assets/0ac769a4-eed3-49f8-82ee-b12a96e659f9" />
+
 
 ---
 
 ##  Star Schema Model
 ```
-<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/143c6b3b-0b80-4e62-a44e-66ff7825808b" />
+<img width="1077" height="711" alt="star shema" src="https://github.com/user-attachments/assets/bea9febc-b2ce-4152-9883-2186e404c521" />
+
 
 ```
 
@@ -88,7 +91,8 @@ Contains **metrics** (measures) for each booking:
 
 ##  Power BI Dashboard - Visualizations
 
-![Dashboard](powerbi/dashboard_screenshot.png)
+<img width="1283" height="724" alt="Hotel_Booking_Dashboard" src="https://github.com/user-attachments/assets/3f00c42c-73c8-4ffd-8fa8-147cf313b1a7" />
+
 
 The dashboard consists of the following visuals:
 
